@@ -1,0 +1,7 @@
+# Fichiers de configuration de CLion
+.idea/
+cmake-build-*/
+
+# Fichiers objets et exécutables compilés
+*.o
+minishell
