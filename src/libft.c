@@ -1,6 +1,4 @@
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
+
 #include "libft.h"
 
 int compterMot(char *s) {
@@ -46,7 +44,6 @@ char **ft_split(char *s) {
             q++;
         }
     }
-
     *p = NULL;
     return tab;
 }

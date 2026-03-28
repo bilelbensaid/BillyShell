@@ -11,14 +11,6 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-#define ROUGE   "\033[31m"
-#define VERT    "\033[32m"
-#define JAUNE   "\033[33m"
-#define BLEU    "\033[34m"
-#define MAGENTA "\033[35m"
-#define CYAN    "\033[36m"
-#define RESET   "\033[0m"
-#define GRAS    "\033[1m"
 
 
 // COMMANDES
@@ -84,7 +76,7 @@ void man() {
     "- Les fichiers/dossiers inexistants provoquent une erreur systeme.\n");
 }
 
-void créerFichier(char *f) {
+void mkfile(char *f) {
     FILE *pfile = fopen(f, "w+");
     if (pfile==NULL) {
         perror(ROUGE"Fichier introuvable"RESET);
@@ -188,14 +180,14 @@ void cmd_lire(int argc, char *arg[]) {
 
 
 void cmd_file(int argc, char **arg) {
-    if (strcmp(*arg, "file")==0) {
+    if (strcmp(*arg, "mkfile")==0) {
         if (argc<2) {
-            printf(JAUNE"Usage : file <nom du fichier> "RESET);
+            printf(JAUNE"Usage : mkfile <nom du fichier> "RESET);
             return;
         }else {
             arg++;
             while (*arg) {
-                créerFichier(*arg);
+                mkfile(*arg);
                 arg++;
             }
 
